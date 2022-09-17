@@ -4,6 +4,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { logger } from 'redux-logger';
+import reduxPromise from 'redux-promise';
 
 // internal modules
 import App from './components/app';
@@ -31,7 +32,7 @@ const reducers = combineReducers({
   selectedChannel: SelectedChannelReducer
 });
 
-const middlewares = applyMiddleware(logger);
+const middlewares = applyMiddleware(reduxPromise, logger);
 
 // render an instance of the component in the DOM
 const container = document.getElementById('root');

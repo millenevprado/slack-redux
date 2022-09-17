@@ -29,7 +29,8 @@
     "react-dom": "18.2.0",
     "react-redux": "^8.0.2",
     "redux": "^4.2.0",
-    "redux-logger": "^3.0.6"
+    "redux-logger": "^3.0.6",
+    "redux-promise": "^0.6.0"
   },
   "scripts": {
     "start": "webpack-dev-server --mode development",
