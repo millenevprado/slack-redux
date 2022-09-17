@@ -2,14 +2,15 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { logger } from 'redux-logger';
 
 // internal modules
 import App from './components/app';
 import '../assets/stylesheets/application.scss';
 
 // reducers
-import ChannelsReducer from './reducers/channles_reducer';
+import ChannelsReducer from './reducers/channels_reducer';
 import MessagesReducer from './reducers/messages_reducer';
 import CurrentUserReducer from './reducers/current_user_reducer';
 import SelectedChannelReducer from './reducers/selected_channel_reducer';
@@ -22,7 +23,6 @@ const initialState = {
   selectedChannel: 'general'
 };
 
-
 // State and reducers
 const reducers = combineReducers({
   channels: ChannelsReducer,
@@ -31,11 +31,13 @@ const reducers = combineReducers({
   selectedChannel: SelectedChannelReducer
 });
 
+const middlewares = applyMiddleware(logger);
+
 // render an instance of the component in the DOM
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-  <Provider store={createStore(reducers)}>
+  <Provider store={createStore(reducers, {}, middlewares)}>
     <App />
   </Provider>
 );
