@@ -1,0 +1,12 @@
+.chat-section {
+  margin-top: 24px;
+  .chat-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h3 {
+      margin-bottom: 0;
+    }
+  }
+}

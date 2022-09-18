@@ -10,6 +10,11 @@ const App = () => {
       </div>
       <div className="channels-sidebar">
         <h1>Le Wagon</h1>
+        <div className="chat-section">
+          <div className="chat-section-header">
+            <h3>Channels</h3>
+          </div>
+        </div>
       </div>
       <MessageList />
     </div>
