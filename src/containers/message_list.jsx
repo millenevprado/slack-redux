@@ -18,6 +18,13 @@ class MessageList extends Component {
   render() {
     return (
       <div className="chat-container">
+        <div className="chat-header">
+          <h1>
+            <i className="fab fa-slack-hash" />
+            {/* {this.props.selectedChannel} */}
+            general
+          </h1>
+        </div>
         <div className="chat-conversations">
           {this.props.messages.map(message => <Message message={message} key={message.created_at} />)}
         </div>
