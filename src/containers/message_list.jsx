@@ -10,14 +10,18 @@ class MessageList extends Component {
     this.fetchMessages();
   }
 
+  fetchMessages = () => {
+    this.props.fetchMessages('general');
+  }
+
   render() {
     return (
       <div>
-        {this.props.messages.map((message) => <Message message={message} key={message.created_at} />)}
+        {this.props.messages.map(message => <Message message={message} key={message.created_at} />)}
       </div>
     );
   }
-};
+}
 
 // this.props.messages is now mapped to the redux state sbtree "messages"
 function mapStateToProps(state) {
