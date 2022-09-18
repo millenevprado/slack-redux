@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import { fetchMessages } from '../actions';
 import Message from '../components/message';
+import MessageForm from '../containers/message_form';
 
 class MessageList extends Component {
   componentWillMount() {
@@ -17,8 +18,12 @@ class MessageList extends Component {
   render() {
     return (
       <div>
-        {this.props.messages.map(message => <Message message={message} key={message.created_at} />)}
+        <div>
+          {this.props.messages.map(message => <Message message={message} key={message.created_at} />)}
+        </div>
+        <MessageForm />
       </div>
+
     );
   }
 }

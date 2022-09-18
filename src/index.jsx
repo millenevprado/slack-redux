@@ -13,7 +13,7 @@ import '../assets/stylesheets/application.scss';
 // reducers
 import ChannelsReducer from './reducers/channels_reducer';
 import MessagesReducer from './reducers/messages_reducer';
-import CurrentUserReducer from './reducers/current_user_reducer';
+// import CurrentUserReducer from './reducers/current_user_reducer';
 import SelectedChannelReducer from './reducers/selected_channel_reducer';
 
 const identityReducer = (state = null) => state;
