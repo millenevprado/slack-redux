@@ -8,6 +8,9 @@ const App = () => {
       <div className="organizations-sidebar">
         <h2 className="organization active">LW</h2>
       </div>
+      <div className="channels-sidebar">
+        <h1>Le Wagon</h1>
+      </div>
       <MessageList />
     </div>
 
