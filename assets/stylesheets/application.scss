@@ -1,6 +1,9 @@
 /* Importing Google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800');
 
+/* Importing components */
+@import "./components/sidebars.scss";
+
 body {
   font-family: 'Open Sans', sans-serif;
   color: #212529;
@@ -23,4 +26,9 @@ h3 {
 }
 .padded {
   padding: 30px 0;
+}
+
+.app {
+  display: flex;
+  height: 100vh;
 }
