@@ -16,6 +16,8 @@ import MessagesReducer from './reducers/messages_reducer';
 import CurrentUserReducer from './reducers/current_user_reducer';
 import SelectedChannelReducer from './reducers/selected_channel_reducer';
 
+const identityReducer = (state = null) => state;
+
 // initial state
 const initialState = {
   messages: [],
@@ -24,21 +26,21 @@ const initialState = {
   selectedChannel: 'general'
 };
 
-// State and reducers
 const reducers = combineReducers({
-  channels: ChannelsReducer,
+  channels: identityReducer,
   messages: MessagesReducer,
-  currentUser: CurrentUserReducer,
+  currentUser: identityReducer,
   selectedChannel: SelectedChannelReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
+const store = createStore(reducers, initialState, middlewares);
 
 // render an instance of the component in the DOM
 const container = document.getElementById('root');
 const root = createRoot(container);
 root.render(
-  <Provider store={createStore(reducers, {}, middlewares)}>
+  <Provider store={store}>
     <App />
   </Provider>
 );
