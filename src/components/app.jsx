@@ -14,6 +14,24 @@ const App = () => {
           <div className="chat-section-header">
             <h3>Channels</h3>
           </div>
+          <div className="channel">
+            <span>
+              <i className="fab fa-slack-hash" />
+              general
+            </span>
+          </div>
+          <div className="channel">
+            <span>
+              <i className="fab fa-slack-hash" />
+              react
+            </span>
+          </div>
+          <div className="channel">
+            <span>
+              <i className="fab fa-slack-hash" />
+              rails
+            </span>
+          </div>
         </div>
       </div>
       <MessageList />

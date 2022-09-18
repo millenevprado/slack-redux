@@ -1,0 +1,13 @@
+.channel {
+  display: flex;
+  align-items: center;
+
+  span {
+    opacity: 0.4;
+  }
+
+  i {
+    font-size: 14px;
+    margin-right: 4px;
+  }
+}
