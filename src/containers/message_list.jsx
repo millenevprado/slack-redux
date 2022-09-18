@@ -2,9 +2,14 @@ import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
+import { fetchMessages } from '../actions';
 import Message from '../components/message';
 
 class MessageList extends Component {
+  componentWillMount() {
+    this.fetchMessages();
+  }
+
   render() {
     return (
       <div>
@@ -14,18 +19,16 @@ class MessageList extends Component {
   }
 };
 
-// this.props.messages is now mapped to the redux initialState sbtree "messages"
+// this.props.messages is now mapped to the redux state sbtree "messages"
 function mapStateToProps(state) {
   return {
     messages: state.messages
   };
 }
 
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators(
-//     { setCities: setCities },
-//     dispatch
-//   );
-// }
+// this.props.fetchMessages is now available in the container
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators( { fetchMessages }, dispatch);
+}
 
-export default connect(mapStateToProps, null)(MessageList);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageList);
