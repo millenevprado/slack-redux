@@ -17,8 +17,8 @@ class MessageList extends Component {
 
   render() {
     return (
-      <div>
-        <div>
+      <div className="chat-container">
+        <div className="chat-conversations">
           {this.props.messages.map(message => <Message message={message} key={message.created_at} />)}
         </div>
         <MessageForm />
