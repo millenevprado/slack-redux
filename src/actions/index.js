@@ -10,7 +10,8 @@ export function fetchMessages(channel) {
 
   return {
     type: FETCH_MESSAGES,
-    payload: promise // Will be resolved by redux-promise
+    // Will be resolved by redux-promise
+    payload: promise
   };
 }
 
@@ -28,7 +29,8 @@ export function createMessage(channel, author, content) {
 
   return {
     type: MESSAGE_POSTED,
-    payload: promise // Will be resolved by redux-promise
+    // Will be resolved by redux-promise
+    payload: promise
   };
 }
 
