@@ -1,6 +1,7 @@
 # Slack Copycat With React & Redux
 
 ## A copy of slack chat:
+![image](assets/images/slack.gif)
 
 ## Created with Le Wagon [redux-boilerplate](https://github.com/lewagon/redux-boilerplate) using with the following config:
 
