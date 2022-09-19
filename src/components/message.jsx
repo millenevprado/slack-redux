@@ -1,4 +1,5 @@
 import React from 'react';
+import { emojify } from 'react-emojione';
 
 const strToRGB = (string) => {
   let hash = 0;
@@ -20,7 +21,7 @@ const Message = (props) => {
         <span style={{ color: strToRGB(author) }}><strong>{author }</strong></span>
         <small>- {time}</small>
       </p>
-      <p>{content}</p>
+      <p>{emojify(content)}</p>
     </div>
   );
 };
