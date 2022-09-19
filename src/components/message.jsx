@@ -13,12 +13,12 @@ const strToRGB = (string) => {
 
 const Message = (props) => {
   const { author, content, created_at } = props.message;
-  const time = new Date(created_at).toLocaleDateString();
+  const time = new Date(created_at).toLocaleTimeString();
   return (
     <div className="message">
       <p className="d-flex align-items-center justify-content-center">
-        <span style={{ color: strToRGB(author) }}><strong>{author}</strong> - </span>
-        <small>{time}</small>
+        <span style={{ color: strToRGB(author) }}><strong>{author }</strong></span>
+        <small>- {time}</small>
       </p>
       <p>{content}</p>
     </div>
