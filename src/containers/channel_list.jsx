@@ -7,12 +7,15 @@ import { selectChannel } from '../actions/index';
 class ChannelList extends Component {
   handleClick = (channel) => {
     this.props.selectChannel(channel);
-    console.log(channel)
   }
 
   renderChannel = (channel) => {
+    let classes = "channel";
+    if (channel === this.props.selectedChannel) {
+      classes += " active";
+    }
     return (
-      <div className="channel" key={channel} onClick={() => this.handleClick(channel)}>
+      <div className={classes}  key={channel} onClick={() => this.handleClick(channel)}>
         <span>
           <i className="fab fa-slack-hash" />
           {channel}
