@@ -16,7 +16,15 @@ class ChannelList extends Component {
 
   render() {
     return (
-      this.props.channels.map(this.renderChannel)
+      <div className="channels-sidebar">
+        <h1>Le Wagon</h1>
+        <div className="chat-section">
+          <div className="chat-section-header">
+            <h3>Channels</h3>
+          </div>
+          {this.props.channels.map(this.renderChannel)}
+        </div>
+      </div>
     );
   }
 }
