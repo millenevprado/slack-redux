@@ -10,6 +10,10 @@ class MessageForm extends Component {
     this.state = { value: '' };
   }
 
+  componentDidMount() {
+    this.messageBox.focus();
+  }
+
   handleChange = (event) => {
     this.setState({ value: event.target.value });
   }
@@ -29,6 +33,7 @@ class MessageForm extends Component {
           value={this.state.value}
           placeholder="Type your message..."
           onChange={this.handleChange}
+          ref={(input) => { this.messageBox = input; }}
         />
       </form>
     );
