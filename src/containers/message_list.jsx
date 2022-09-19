@@ -11,6 +11,18 @@ class MessageList extends Component {
     this.fetchMessages();
   }
 
+  componentDidMount() {
+    this.refresher = setInterval(this.fetchMessages, 4000);
+  }
+
+  componentDidUpdate() {
+    this.list.scrollTop = this.list.scrollHeight;
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.refresher);
+  }
+
   fetchMessages = () => {
     this.props.fetchMessages('general');
   }
@@ -25,12 +37,11 @@ class MessageList extends Component {
             general
           </h1>
         </div>
-        <div className="chat-conversations">
+        <div className="chat-conversations" ref={(list) => { this.list = list; }}>
           {this.props.messages.map(message => <Message message={message} key={message.created_at} />)}
         </div>
         <MessageForm />
       </div>
-
     );
   }
 }
