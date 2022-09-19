@@ -45,7 +45,6 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ createMessage }, dispatch);
 }
 
-
 function mapStateToProps(state) {
   return {
     selectedChannel: state.selectedChannel,
