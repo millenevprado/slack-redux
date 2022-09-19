@@ -3,6 +3,10 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class ChannelList extends Component {
+  handleClick = (channel) => {
+    this.props.selectChannel(channel);
+  }
+
   renderChannel = (channel) => {
     return (
       <div className="channel" key={channel} onClick={() => this.handleClick(channel)}>
