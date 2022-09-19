@@ -14,6 +14,7 @@ class ChannelList extends Component {
     if (channel === this.props.selectedChannel) {
       classes += " active";
     }
+
     return (
       <div className={classes}  key={channel} onClick={() => this.handleClick(channel)}>
         <span>

@@ -24,7 +24,7 @@ class MessageList extends Component {
   }
 
   fetchMessages = () => {
-    this.props.fetchMessages('general');
+    this.props.fetchMessages(this.props.selectedChannel);
   }
 
   render() {
@@ -33,8 +33,7 @@ class MessageList extends Component {
         <div className="chat-header">
           <h1>
             <i className="fab fa-slack-hash" />
-            {/* {this.props.selectedChannel} */}
-            general
+            {this.props.selectedChannel}
           </h1>
         </div>
         <div className="chat-conversations" ref={(list) => { this.list = list; }}>
@@ -49,7 +48,8 @@ class MessageList extends Component {
 // this.props.messages is now mapped to the redux state sbtree "messages"
 function mapStateToProps(state) {
   return {
-    messages: state.messages
+    messages: state.messages,
+    selectedChannel: state.selectedChannel
   };
 }
 
