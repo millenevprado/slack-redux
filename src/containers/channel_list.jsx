@@ -3,18 +3,20 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
 class ChannelList extends Component {
+  renderChannel = (channel) => {
+    return (
+      <div className="channel" key={channel} onClick={() => this.handleClick(channel)}>
+        <span>
+          <i className="fab fa-slack-hash" />
+          {channel}
+        </span>
+      </div>
+    );
+  }
+
   render() {
     return (
-      this.props.channels.map((channel) => {
-        return (
-          <div className="channel" key={channel}>
-            <span>
-              <i className="fab fa-slack-hash" />
-              {channel}
-            </span>
-          </div>
-        );
-      })
+      this.props.channels.map(this.renderChannel)
     );
   }
 }
